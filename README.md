@@ -16,72 +16,8 @@ Features
 Requirements
 ------------
 
+(coming soon)
 
-
-Example
--------
-
-Basic Usage
-
-````
-<?php
-require_once("CurlQueue.class.php");
-$curl = new CurlQueue();
-
-$config = array(
-  "window" => 2,
-  "timeout" => 10,
-  "callback" => "mycallback"
-);
-$curl->config($config);
-
-$curl->get("http://www.google.com");
-$curl->get("http://www.yahoo.com");
-$curl->get("http://www.bing.com");
-$curl->get("http://www.msn.com");
-$curl->get("http://www.php.net");
-$curl->execute();
-
-function mycallback($output,$info)
-{
-  $url = $info["url"];
-  echo "The output from URL $url is $output";
-}
-?>
-````
-
-Advanced Usage
-
-````
-<?php
-require_once("CurlQueue.class.php");
-$curl = new CurlQueue();
-
-$config = array(
-  "window" => 2,
-  "timeout" => 10,
-);
-$curl->config($config);
-
-$curlopt = array(
-  CURLOPT_SSL_VERIFYPEER => 0
-);
-
-class foo {
-  function mycallback($output,$info) {
-  
-  }
-}
-$foo = new foo();
-$callback = array($foo,"mycallback");
-
-$callback = array();
-$curl->get($url="http://www.google.com",$headers,$curlopt,$callback);
-
-$curl->execute();
-
-?>
-````
 
 Configurable Options
 --------------------
@@ -93,14 +29,22 @@ Configurable Options
 Adding a Request
 ----------------
 
+(coming soon)
+
 Custom Headers
 --------------
+
+(coming soon)
 
 Custom Curl Options
 -------------------
 
+(coming soon)
+
 Custom Callback
 ---------------
+
+(coming soon)
 
 Legal
 -----
