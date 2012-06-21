@@ -47,7 +47,8 @@ class CurlQueue {
 			{
 				case "window":
 				case "timeout":
-				case "callback":
+				case "options":
+				case "callback":				
 					$this->{$key} = $value;
 					break;
 				default:
@@ -56,12 +57,6 @@ class CurlQueue {
 		}
 		$this->set_options();
 		return TRUE;
-	}
-
-	public function options($options = NULL)
-	{
-		if ( is_array($options) ) $this->options = $options;
-		else return $this->options;
 	}
 
 	public function request($url, $method = "GET", $post_data = NULL, $headers = NULL, $options = NULL, $callback = NULL)
