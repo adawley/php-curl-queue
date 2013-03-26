@@ -109,8 +109,9 @@ class CurlQueue {
 	private function process_one()
 	{
 		$request 		= $this->queue->next();
-		$handle 			= $this->get_handle($request);
-		$output 			= curl_exec($handle);
+		$handle 	        = curl_init();
+                curl_setopt_array($handle, $this->build_options($request));
+		$output 	        = curl_exec($handle);
 		$info 			= curl_getinfo($handle);
 
 		// run callback
